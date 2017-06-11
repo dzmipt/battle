@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<script>
+var socket=io();
+
+function sendName() {
+	var name = $("#name").val();
+	socket.emit('name',name);
+}
+
+$(function () {
+
+	$('#sendName').on("click", sendName); 
+
+	socket.on("new name", (id,name) => {
+		console.log("new name " + name + " with id " + id);
+		var elDiv = $('#list').children('#'+id);
+		if (elDiv.length==0) {
+			var elDiv = $("<div/>").attr("id",id);
+			var elChkbox = $("<input/>").attr("type","checkbox");
+			var elSpan = $("<span/>").text(name);
+			elDiv.append(elChkbox,elSpan);
+			$('#list').append(elDiv);
+		} else {
+			elDiv.children('span').text(name);
+		}
+	});
+
+	socket.on('disconnect id', (id) => {
+		console.log("disconnect id " + id);
+		$('#list').children('#'+id).remove();
+	});
+});
+
+</script>
+
+<body>
+
+<p>My name:<input id="name" /> <button id="sendName">Send</button>
+<p>List:</p>
+<div id="list"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+button {
+	margin: 0vh 3vh;
+	height: 6vh;
+	width: 12vh;
+	font-size: 3vh;
+	border-radius: 1vh;
+}
+
+input {
+	height: 6vh;
+	font-size: 3vh;
+}
+
+p {
+	font-size: 3vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 62vh;
+    height: 12vh;
+    overflow: auto;
+    overflow-x: auto;
+    border: 1px solid black;
+}
+li {
+	font-size: 3vh;
+	margin: 0.2vh;
+}
+
+.ddtable {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	display: inline;
+	cursor: pointer;
+}
+.ddtd {
+	border: 1px solid black;
+	padding: 0px;
+}
+.maintd {
+	width: 6vh;
+	height: 6vh;	
+}
+.legendtd {
+	width: 5vh;
+	height: 5vh;	
+}
+.dddiv {
+	text-align: center;
+	line-height: 6vh;
+	font-size: 4vh;
+}
+.counterdiv {
+	text-align: center;
+}
+.primaryText {
+	color: LightCoral;
+}
+.secondaryText {
+	color: RoyalBlue;
+}
+.primary {
+	background-color: LightCoral;	
+}
+.secondary {
+	background-color: RoyalBlue;
+}
+.selected {
+	background-color: orange;
+}
+.selectable:hover {
+	background-color: yellow;
+}
+.move {
+	background-color: green;
+}
+.moveFrom {
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.moveTo {
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.attack {
+	background-color: red;
+}
+
+.water {
+	background-color: cyan;
+}

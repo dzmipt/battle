@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Battle</title>
+	<link rel="stylesheet" href="table.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="./url.js"></script>
+    <script src="/socket.io/socket.io.js"></script>    
+    <script src="clientsession.js"></script>
+    <script src="table.js"></script>
+    <script src="clienttest.js"></script>
+</head>
+<script>
+
+$(function () {
+	initTest();
+	initSession();
+});
+
+</script>
+<body>
+<div id="divTest" style="display:none">
+	Test: <button id="btnPrimary" onclick="testPrimary()" style="background-color:LightCoral;">a</button> &nbsp; 
+		  <button id="btnSecondary" onclick="testSecondary()" style="background-color:RoyalBlue;">b</button>
+	<hr/>
+</div>
+
+<div id="divName">
+<p>Name: <input id="inpName"/> <button id="btnSend" onclick="sendName()">Send</button>
+</div>
+
+<div id="divPair" style="display:none">
+<p>Hello, <b><span id="spanName"/></b>!</p>
+<p>Select who you want to play with
+</div>
+
+<div id="divPlay" style="display:none"/>
+<table class="ddtable" id="table"></table>
+<p/>
+<table class="ddtable" id="legend"></table>
+<p id="msg" style="display:none"/></p>
+<p/>
+<button id="btnNext" disabled>Start</button>
+<ul id="log">
+</ul>
+</div>
+
+</body>
+
+</html>
